@@ -82,7 +82,6 @@ const LobSmashLanding = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [emailError, setEmailError] = useState('');
-  const [userPosition, setUserPosition] = useState(null);
 
   // Email validation function
   const validateEmail = (email) => {
@@ -105,15 +104,12 @@ const LobSmashLanding = () => {
     setIsLoading(true);
 
     try {
-      const response = await fetch('https://script.google.com/macros/s/AKfycbzX4I9MGAPqPyN7VFc1l-DuANl4PIMlKHYNaXdYhZB7uzunyduNpGnoseDH-nAvHfW1/exec', {
+      await fetch('https://script.google.com/macros/s/AKfycbzYxq5m2sgmNIj0dysNIeY5uQDrE4DQvVpwKKH0O7WSrU9S-RCuDSpNrd55n9PNntMG/exec', {
         method: 'POST',
+        mode: 'no-cors',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email })
       });
-      const data = await response.json();
-      if (data && data.position) {
-        setUserPosition(data.position);
-      }
       setIsSubmitted(true);
     } catch (error) {
       setIsSubmitted(true);
@@ -381,11 +377,6 @@ const LobSmashLanding = () => {
             >
               <div className="text-xl sm:text-3xl mb-2 sm:mb-3 font-sans">🎉 You're In!</div>
               <div className="text-base sm:text-lg mb-2 sm:mb-4 font-sans">Welcome to the future of padel coaching! You'll be notified the moment <span className="lob-italic">Lob</span>Smash launches.</div>
-              {userPosition && (
-                <div className="text-xs sm:text-sm opacity-90 bg-white/10 rounded-full px-3 sm:px-4 py-1 sm:py-2 inline-block font-sans text-white mt-2">
-                  Position #{userPosition} on the waitlist
-                </div>
-              )}
             </div>
           )}
         </div>
