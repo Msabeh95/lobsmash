@@ -81,30 +81,54 @@ const LobSmashLanding = () => {
   const [email, setEmail] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [emailError, setEmailError] = useState('');
+  const [userPosition, setUserPosition] = useState(null);
+
+  // Email validation function
+  const validateEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
 
   useEffect(() => { document.title = 'LobSmash – Your AI Padel Coach'; }, []);
 
   const handleSubmit = async () => {
-    if (!email) return;
-    
+    setEmailError('');
+    if (!email) {
+      setEmailError('Please enter your email address');
+      return;
+    }
+    if (!validateEmail(email)) {
+      setEmailError('Please enter a valid email address');
+      return;
+    }
     setIsLoading(true);
-    
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    setIsSubmitted(true);
-    setIsLoading(false);
-    
-    // Add celebration effect
-    setTimeout(() => {
-      const successEl = document.getElementById('success-message');
-      if (successEl) {
-        successEl.style.transform = 'scale(1.05)';
-        setTimeout(() => {
-          successEl.style.transform = 'scale(1)';
-        }, 200);
+
+    try {
+      const response = await fetch('https://script.google.com/macros/s/AKfycbzX4I9MGAPqPyN7VFc1l-DuANl4PIMlKHYNaXdYhZB7uzunyduNpGnoseDH-nAvHfW1/exec', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email })
+      });
+      const data = await response.json();
+      if (data && data.position) {
+        setUserPosition(data.position);
       }
-    }, 100);
+      setIsSubmitted(true);
+    } catch (error) {
+      setIsSubmitted(true);
+    } finally {
+      setIsLoading(false);
+      setTimeout(() => {
+        const successEl = document.getElementById('success-message');
+        if (successEl) {
+          successEl.style.transform = 'scale(1.05)';
+          setTimeout(() => {
+            successEl.style.transform = 'scale(1)';
+          }, 200);
+        }
+      }, 100);
+    }
   };
 
   const scrollToWaitlist = () => {
@@ -115,6 +139,18 @@ const LobSmashLanding = () => {
 
   return (
     <div>
+      {/* Player Background Image - Full Viewport */}
+      <div className="fixed inset-0 opacity-20 z-0">
+        <img 
+          src="/player-smash.png" 
+          alt="Padel Player" 
+          className="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-multiply"
+          style={{
+            filter: 'brightness(0.8) contrast(1.2) saturate(0.8)',
+            transform: 'translateY(0%)'
+          }}
+        />
+      </div>
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center text-center text-white overflow-hidden px-2 sm:px-6">
         {/* Logo floating above the hero container */}
@@ -140,11 +176,11 @@ const LobSmashLanding = () => {
             backgroundSize: '100px 100px'
           }} />
         </div>
-        <div className="relative z-10 max-w-6xl px-2 sm:px-6 md:px-8 gradient-border rounded-3xl bg-white/70 backdrop-blur-lg shadow-2xl py-10 sm:py-16 mx-auto">
+        <div className="relative z-10 max-w-6xl px-2 sm:px-6 md:px-8 gradient-border rounded-3xl bg-white/20 backdrop-blur-xl shadow-2xl py-10 sm:py-16 mx-auto border border-white/30">
           <div className="flex flex-col items-center justify-center mb-4 sm:mb-6">
           </div>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold mb-4 sm:mb-6 font-serif" style={{ letterSpacing: '-2px' }}>
-            <span className="lob-italic lob-shootup bg-gradient-to-r from-cyan-600 to-emerald-500 bg-clip-text text-transparent inline-block">Lob</span><span className="smash-in bg-gradient-to-r from-cyan-600 to-emerald-500 bg-clip-text text-transparent inline-block">Smash</span>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 font-serif" style={{ letterSpacing: '-2px' }}>
+            <span className="lob-italic lob-shootup text-white inline-block drop-shadow-2xl" style={{textShadow: '2px 2px 4px rgba(0,0,0,0.8)'}}>Lob</span><span className="smash-in text-white inline-block drop-shadow-2xl" style={{textShadow: '2px 2px 4px rgba(0,0,0,0.8)'}}>Smash</span>
           </h1>
           <p className="text-base sm:text-lg mb-6 sm:mb-8 opacity-90 font-normal max-w-2xl sm:max-w-3xl mx-auto leading-relaxed text-gray-700">
             Your doubles partner won't coach you? LobSmash will — <span className="italic">No drama</span>.
@@ -182,9 +218,9 @@ const LobSmashLanding = () => {
           }} />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-2 sm:px-6 md:px-8">
-          <div className="text-center mb-10 sm:mb-20 gradient-border rounded-3xl bg-white/80 backdrop-blur-lg py-8 sm:py-12 px-4 sm:px-6 shadow-xl">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-6 sm:mb-8 text-gray-800 leading-tight font-sans">
-              <span className="bg-gradient-to-r from-cyan-600 to-emerald-500 bg-clip-text text-transparent">Ready to Level Up Your Padel Game?</span>
+          <div className="text-center mb-10 sm:mb-20 gradient-border rounded-3xl bg-white/20 backdrop-blur-xl py-8 sm:py-12 px-4 sm:px-6 shadow-xl border border-white/30">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-6 sm:mb-8 text-white leading-tight font-sans drop-shadow-2xl" style={{textShadow: '2px 2px 4px rgba(0,0,0,0.8)'}}>
+              <span>Ready to Level Up Your Padel Game?</span>
             </h2>
             <p className="text-lg sm:text-xl md:text-2xl text-gray-700 max-w-2xl sm:max-w-4xl mx-auto leading-relaxed font-medium">
               Your AI coach delivers personalized, actionable guidance—no matter your experience level.
@@ -205,8 +241,8 @@ const LobSmashLanding = () => {
               label: 'Video Uploads Needed',
               sub: '100% private, always'
             }].map((stat, i) => (
-              <div key={i} className="text-center p-8 bg-white/80 rounded-3xl shadow-xl border-2 border-transparent gradient-border hover:scale-105 hover:shadow-2xl transition-all duration-300 transform">
-                <div className="text-5xl sm:text-6xl font-extrabold tracking-wide text-cyan-600 drop-shadow-md mb-3 font-sans" style={{fontFamily: 'Inter, sans-serif', letterSpacing: '0.04em'}}>
+              <div key={i} className="text-center p-8 bg-white/20 backdrop-blur-xl rounded-3xl shadow-xl border border-white/30 hover:scale-105 hover:shadow-2xl transition-all duration-300 transform">
+                <div className="text-5xl sm:text-6xl font-extrabold tracking-wide text-white drop-shadow-2xl mb-3 font-sans" style={{fontFamily: 'Inter, sans-serif', letterSpacing: '0.04em', textShadow: '2px 2px 4px rgba(0,0,0,0.8)'}}>
                   {stat.value}
                 </div>
                 <div className="text-lg font-semibold text-gray-800 mb-2 font-sans">{stat.label}</div>
@@ -242,7 +278,7 @@ const LobSmashLanding = () => {
                 gradient: "bg-gradient-to-br from-purple-400 to-pink-500"
               }
             ].map((feature, i) => (
-              <div key={i} className="gradient-border rounded-3xl bg-white/80 backdrop-blur-lg p-8 shadow-xl border-2 border-transparent hover:scale-105 hover:shadow-2xl transition-all duration-300 transform flex flex-col items-center text-center">
+              <div key={i} className="rounded-3xl bg-white/20 backdrop-blur-xl p-8 shadow-xl border border-white/30 hover:scale-105 hover:shadow-2xl transition-all duration-300 transform flex flex-col items-center text-center">
                 <div className={`w-24 h-24 mb-6 flex items-center justify-center rounded-full bg-white shadow-lg ring-2 ring-cyan-200/40`}>
                   {feature.icon}
                 </div>
@@ -272,8 +308,8 @@ const LobSmashLanding = () => {
             backgroundSize: '50px 50px'
           }} />
         </div>
-        <div className="relative z-10 max-w-4xl mx-auto px-6 sm:px-8 gradient-border rounded-3xl bg-white/90 backdrop-blur-lg shadow-2xl py-16">
-          <h2 className="text-2xl sm:text-5xl md:text-6xl font-semibold mb-4 sm:mb-6 tracking-tight text-gray-900 font-serif">
+        <div className="relative z-10 max-w-4xl mx-auto px-6 sm:px-8 rounded-3xl bg-white/20 backdrop-blur-xl shadow-2xl py-16 border border-white/30">
+          <h2 className="text-2xl sm:text-5xl md:text-6xl font-bold mb-4 sm:mb-6 tracking-tight text-white font-serif drop-shadow-2xl" style={{textShadow: '2px 2px 4px rgba(0,0,0,0.8)'}}>
             Be the First to Get Your AI Padel Coach
           </h2>
           <p className="text-base sm:text-xl mb-8 sm:mb-12 opacity-90 max-w-xl sm:max-w-2xl mx-auto leading-relaxed text-gray-700 font-medium">
@@ -281,15 +317,27 @@ const LobSmashLanding = () => {
           </p>
           {!isSubmitted ? (
             <div className="max-w-md mx-auto">
-              <div className="bg-white/95 backdrop-blur-md rounded-3xl p-8 border-2 border-transparent gradient-border shadow-2xl">
+              <div className="bg-white/20 backdrop-blur-xl rounded-3xl p-8 border border-white/30 shadow-2xl">
                 <div className="flex flex-col gap-4">
                   <input
                     type="email"
                     value={email}
-                    onChange={(e) => setEmail(e.target.value)}
+                    onChange={(e) => {
+                      setEmail(e.target.value);
+                      if (emailError) setEmailError(''); // Clear error when user types
+                    }}
                     placeholder="Enter your email for early access"
-                    className="w-full px-6 py-4 rounded-2xl text-gray-800 text-lg outline-none bg-white shadow-lg focus:shadow-xl transition-all duration-300 border-2 border-transparent focus:border-cyan-400 focus:ring-4 focus:ring-cyan-400/20 font-sans"
+                    className={`w-full px-4 py-3 rounded-2xl text-gray-800 text-base outline-none bg-white/90 backdrop-blur-sm shadow-lg focus:shadow-xl transition-all duration-300 border-2 font-sans ${
+                      emailError 
+                        ? 'border-red-400 focus:border-red-400 focus:ring-4 focus:ring-red-400/20' 
+                        : 'border-white/50 focus:border-cyan-400 focus:ring-4 focus:ring-cyan-400/20'
+                    }`}
                   />
+                  {emailError && (
+                    <div className="text-red-400 text-sm mt-2 font-medium">
+                      {emailError}
+                    </div>
+                  )}
                   <button
                     onClick={handleSubmit}
                     disabled={isLoading || !email}
@@ -308,16 +356,19 @@ const LobSmashLanding = () => {
                     )}
                   </button>
                 </div>
-                <div className="mt-6 pt-6 border-t border-gray-200">
-                  <div className="flex items-center justify-center gap-6 text-sm opacity-80 text-gray-600">
-                    <span className="flex items-center gap-1">
-                      <span className="text-green-500">✓</span> No spam
+                <div className="mt-6 pt-6 border-t border-white/30">
+                  <div className="flex items-center justify-center gap-4 sm:gap-6 text-xs text-white/90">
+                    <span className="flex items-center gap-1 px-2 py-1 bg-gradient-to-r from-cyan-500/20 to-emerald-500/20 backdrop-blur-sm rounded-full border border-cyan-400/30 shadow-lg">
+                      <span className="text-cyan-400 text-sm font-bold">✓</span> 
+                      <span className="font-medium">No Spam</span>
                     </span>
-                    <span className="flex items-center gap-1">
-                      <span className="text-green-500">✓</span> Free forever
+                    <span className="flex items-center gap-1 px-2 py-1 bg-gradient-to-r from-emerald-500/20 to-green-500/20 backdrop-blur-sm rounded-full border border-emerald-400/30 shadow-lg">
+                      <span className="text-emerald-400 text-sm font-bold">✓</span> 
+                      <span className="font-medium">Free</span>
                     </span>
-                    <span className="flex items-center gap-1">
-                      <span className="text-green-500">✓</span> Secure
+                    <span className="flex items-center gap-1 px-2 py-1 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 backdrop-blur-sm rounded-full border border-blue-400/30 shadow-lg">
+                      <span className="text-blue-400 text-sm font-bold">✓</span> 
+                      <span className="font-medium">Private</span>
                     </span>
                   </div>
                 </div>
@@ -330,9 +381,11 @@ const LobSmashLanding = () => {
             >
               <div className="text-xl sm:text-3xl mb-2 sm:mb-3 font-sans">🎉 You're In!</div>
               <div className="text-base sm:text-lg mb-2 sm:mb-4 font-sans">Welcome to the future of padel coaching! You'll be notified the moment <span className="lob-italic">Lob</span>Smash launches.</div>
-              <div className="text-xs sm:text-sm opacity-90 bg-white/10 rounded-full px-3 sm:px-4 py-1 sm:py-2 inline-block font-sans text-white">
-                Position #{Math.floor(Math.random() * 500) + 15000} on the waitlist
-              </div>
+              {userPosition && (
+                <div className="text-xs sm:text-sm opacity-90 bg-white/10 rounded-full px-3 sm:px-4 py-1 sm:py-2 inline-block font-sans text-white mt-2">
+                  Position #{userPosition} on the waitlist
+                </div>
+              )}
             </div>
           )}
         </div>
