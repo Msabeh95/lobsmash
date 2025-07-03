@@ -13,31 +13,6 @@ LobSmash is your personal AI padel coach, built to level up players of all skill
 ## 🖥️ Live Demo
 Coming soon!
 
-## 🛠️ Getting Started
-
-1. **Clone the repo:**
-   ```bash
-   git clone https://github.com/trenchsheikh/lobsmash.git
-   cd lobsmash
-   ```
-2. **Install dependencies:**
-   ```bash
-   npm install
-   ```
-3. **Run the development server:**
-   ```bash
-   npm run dev
-   ```
-4. Open [http://localhost:5173](http://localhost:5173) in your browser.
-
-## 📦 Build for Production
-```bash
-npm run build
-```
-
-## 🤝 Contributing
-Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
-
 ## 📄 License
 MIT
 
