@@ -150,7 +150,7 @@ const LobSmashLanding = () => {
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center text-center text-white overflow-hidden px-2 sm:px-6">
         {/* Logo floating above the hero container */}
-        <div className="absolute left-1/2 -translate-x-1/2 top-1/4 sm:top-1/6 md:top-1/8 z-20 flex flex-col items-center">
+        <div className="absolute left-1/2 -translate-x-1/2 top-8 sm:top-1/6 md:top-1/8 z-20 flex flex-col items-center">
           <img src="/logo.jpg" alt="LobSmash Logo" className="w-28 sm:w-36 md:w-48 lg:w-56 rounded-full bg-white/0 border-4 border-white/60 shadow-2xl" style={{background: 'transparent'}} />
         </div>
         {/* Floating Elements */}
