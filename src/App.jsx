@@ -101,6 +101,10 @@ const LobSmashLanding = () => {
     <div>
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center text-center text-white overflow-hidden px-2 sm:px-6">
+        {/* Logo floating above the hero container */}
+        <div className="absolute left-1/2 -translate-x-1/2 top-8 sm:top-16 z-20 flex flex-col items-center">
+          <img src="/logo.jpg" alt="LobSmash Logo" className="w-32 sm:w-44 md:w-56 rounded-full bg-white/0 border-4 border-white/60 shadow-2xl" style={{background: 'transparent'}} />
+        </div>
         {/* Floating Elements */}
         <div className="absolute inset-0 pointer-events-none">
           <FloatingBall delay={0} position="top-1/5 left-1/12" />
@@ -115,6 +119,8 @@ const LobSmashLanding = () => {
           }} />
         </div>
         <div className="relative z-10 max-w-6xl px-2 sm:px-6 md:px-8 gradient-border rounded-3xl bg-white/70 backdrop-blur-lg shadow-2xl py-10 sm:py-16 mx-auto">
+          <div className="flex flex-col items-center justify-center mb-4 sm:mb-6">
+          </div>
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold mb-4 sm:mb-6 font-serif" style={{ letterSpacing: '-2px' }}>
             <span className="lob-italic lob-shootup bg-gradient-to-r from-cyan-600 to-emerald-500 bg-clip-text text-transparent inline-block">Lob</span><span className="smash-in bg-gradient-to-r from-cyan-600 to-emerald-500 bg-clip-text text-transparent inline-block">Smash</span>
           </h1>

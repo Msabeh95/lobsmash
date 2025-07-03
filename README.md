@@ -1,3 +1,7 @@
+<div align="center">
+  <img src="public/logo.jpg" alt="LobSmash Logo" width="180" />
+</div>
+
 # LobSmash – Your AI Padel Coach
 
 LobSmash is your personal AI padel coach, built to level up players of all skill levels. Get custom training plans, tactics, and mental game tips—no video upload needed. Train smarter, play sharper, and dominate the court with data-backed coaching in your pocket.
