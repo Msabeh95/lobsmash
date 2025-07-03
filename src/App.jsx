@@ -3,9 +3,23 @@ import React, { useState, useEffect } from 'react';
 const FloatingBall = ({ delay = 0, position }) => {
   return (
     <div 
-      className={`absolute w-5 h-5 bg-white bg-opacity-10 rounded-full animate-bounce ${position}`}
-      style={{ animationDelay: `${delay}s`, animationDuration: '6s' }}
-    />
+      className={`absolute w-8 h-8 ${position}`}
+      style={{ 
+        animationDelay: `${delay}s`, 
+        animationDuration: '8s',
+        animation: `float ${8 + delay}s infinite ease-in-out`
+      }}
+    >
+      <img 
+        src="/tennis-ball.png" 
+        alt="Tennis Ball" 
+        className="w-full h-full object-contain" 
+        style={{ 
+          filter: 'contrast(1.2) brightness(1.1)',
+          mixBlendMode: 'multiply'
+        }} 
+      />
+    </div>
   );
 };
 
@@ -68,6 +82,8 @@ const LobSmashLanding = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
+  useEffect(() => { document.title = 'LobSmash – Your AI Padel Coach'; }, []);
+
   const handleSubmit = async () => {
     if (!email) return;
     
@@ -108,8 +124,14 @@ const LobSmashLanding = () => {
         {/* Floating Elements */}
         <div className="absolute inset-0 pointer-events-none">
           <FloatingBall delay={0} position="top-1/5 left-1/12" />
+          <FloatingBall delay={1} position="top-2/5 right-1/6" />
           <FloatingBall delay={2} position="top-3/5 right-1/5" />
+          <FloatingBall delay={3} position="top-4/5 left-1/4" />
           <FloatingBall delay={4} position="bottom-1/5 left-1/5" />
+          <FloatingBall delay={5} position="bottom-2/5 right-1/3" />
+          <FloatingBall delay={6} position="bottom-3/5 left-1/6" />
+          <FloatingBall delay={7} position="top-1/3 left-1/3" />
+          <FloatingBall delay={8} position="bottom-1/3 right-1/4" />
         </div>
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-10">
@@ -142,6 +164,16 @@ const LobSmashLanding = () => {
 
       {/* Features Section */}
       <section className="py-12 sm:py-24 relative overflow-hidden px-2 sm:px-6">
+        {/* Floating Tennis Balls */}
+        <div className="absolute inset-0 pointer-events-none">
+          <FloatingBall delay={0.5} position="top-1/6 left-1/8" />
+          <FloatingBall delay={1.5} position="top-2/6 right-1/10" />
+          <FloatingBall delay={2.5} position="top-3/6 left-1/5" />
+          <FloatingBall delay={3.5} position="top-4/6 right-1/7" />
+          <FloatingBall delay={4.5} position="top-5/6 left-1/12" />
+          <FloatingBall delay={5.5} position="bottom-1/6 right-1/8" />
+          <FloatingBall delay={6.5} position="bottom-2/6 left-1/10" />
+        </div>
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-3">
           <div className="w-full h-full" style={{
@@ -150,24 +182,24 @@ const LobSmashLanding = () => {
           }} />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-2 sm:px-6 md:px-8">
-          <div className="text-center mb-10 sm:mb-20 gradient-border rounded-3xl bg-white/80 backdrop-blur-lg py-6 sm:py-10 px-2 sm:px-4 shadow-xl">
-            <h2 className="text-2xl sm:text-4xl md:text-5xl font-semibold text-center mb-4 sm:mb-6 text-gray-800 tracking-tight font-serif">
-              Why Padel Players Are Leveling Up with <span className="lob-italic">Lob</span>Smash
+          <div className="text-center mb-10 sm:mb-20 gradient-border rounded-3xl bg-white/80 backdrop-blur-lg py-8 sm:py-12 px-4 sm:px-6 shadow-xl">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-6 sm:mb-8 text-gray-800 leading-tight font-sans">
+              <span className="bg-gradient-to-r from-cyan-600 to-emerald-500 bg-clip-text text-transparent">Ready to Level Up Your Padel Game?</span>
             </h2>
-            <p className="text-base sm:text-xl text-gray-600 max-w-xl sm:max-w-3xl mx-auto leading-relaxed">
-              Your AI coach delivers personalized, actionable guidance—no matter your experience.
+            <p className="text-lg sm:text-xl md:text-2xl text-gray-700 max-w-2xl sm:max-w-4xl mx-auto leading-relaxed font-medium">
+              Your AI coach delivers personalized, actionable guidance—no matter your experience level.
             </p>
           </div>
           {/* Stats */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 mb-10 sm:mb-20">
             {[{
-              value: '15K+',
-              label: 'Players Coached',
-              sub: 'From beginner to advanced'
+              value: '500+',
+              label: 'Beta Testers',
+              sub: 'Early access community'
             }, {
-              value: '98%',
-              label: 'See Real Progress',
-              sub: 'Users improved in 4 weeks'
+              value: '24/7',
+              label: 'AI Coach Available',
+              sub: 'Get tips anytime, anywhere'
             }, {
               value: '0',
               label: 'Video Uploads Needed',
@@ -224,6 +256,15 @@ const LobSmashLanding = () => {
 
       {/* Waitlist Section */}
       <section id="waitlist" className="py-24 relative text-center overflow-hidden">
+        {/* Floating Tennis Balls */}
+        <div className="absolute inset-0 pointer-events-none">
+          <FloatingBall delay={0.2} position="top-1/4 left-1/6" />
+          <FloatingBall delay={1.2} position="top-2/4 right-1/8" />
+          <FloatingBall delay={2.2} position="top-3/4 left-1/10" />
+          <FloatingBall delay={3.2} position="bottom-1/4 right-1/6" />
+          <FloatingBall delay={4.2} position="bottom-2/4 left-1/8" />
+          <FloatingBall delay={5.2} position="bottom-3/4 right-1/10" />
+        </div>
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-10">
           <div className="w-full h-full" style={{
