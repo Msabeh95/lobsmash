@@ -1,12 +1,46 @@
-# React + Vite
+# LobSmash – Your AI Padel Coach
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+LobSmash is your personal AI padel coach, built to level up players of all skill levels. Get custom training plans, tactics, and mental game tips—no video upload needed. Train smarter, play sharper, and dominate the court with data-backed coaching in your pocket.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **AI-Generated Training Plans**: Personalized weekly training plans tailored to your goals, strengths, and weaknesses.
+- **Tactical Match Insights**: Get match strategy, shot selection, and positioning tips based on your play style.
+- **Mental Game Mastery**: Unlock focus, confidence, and resilience with AI-powered mental training.
+- **Progress Tracking & Analytics**: Track your improvement, set goals, and get data-driven feedback after every session.
+- **100% Private**: No video upload required. Your data stays with you.
 
-## Expanding the ESLint configuration
+## 🖥️ Live Demo
+Coming soon!
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Getting Started
+
+1. **Clone the repo:**
+   ```bash
+   git clone https://github.com/trenchsheikh/lobsmash.git
+   cd lobsmash
+   ```
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+3. **Run the development server:**
+   ```bash
+   npm run dev
+   ```
+4. Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+## 📦 Build for Production
+```bash
+npm run build
+```
+
+## 🤝 Contributing
+Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
+
+## 📄 License
+MIT
+
+---
+
+*Made with ❤️ by the LobSmash team*
