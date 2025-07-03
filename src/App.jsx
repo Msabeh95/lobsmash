@@ -356,15 +356,15 @@ const LobSmashLanding = () => {
                   <div className="flex items-center justify-center gap-4 sm:gap-6 text-xs text-white/90">
                     <span className="flex items-center gap-1 px-2 py-1 bg-gradient-to-r from-cyan-500/20 to-emerald-500/20 backdrop-blur-sm rounded-full border border-cyan-400/30 shadow-lg">
                       <span className="text-cyan-400 text-sm font-bold">✓</span> 
-                      <span className="font-medium">No Spam</span>
+                      <span className="font-normal text-xs whitespace-nowrap">Bandeja Shot</span>
                     </span>
                     <span className="flex items-center gap-1 px-2 py-1 bg-gradient-to-r from-emerald-500/20 to-green-500/20 backdrop-blur-sm rounded-full border border-emerald-400/30 shadow-lg">
                       <span className="text-emerald-400 text-sm font-bold">✓</span> 
-                      <span className="font-medium">Free</span>
+                      <span className="font-normal text-xs whitespace-nowrap">Vibora Shot</span>
                     </span>
                     <span className="flex items-center gap-1 px-2 py-1 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 backdrop-blur-sm rounded-full border border-blue-400/30 shadow-lg">
                       <span className="text-blue-400 text-sm font-bold">✓</span> 
-                      <span className="font-medium">Private</span>
+                      <span className="font-normal text-xs whitespace-nowrap">Chiquita Shot</span>
                     </span>
                   </div>
                 </div>
