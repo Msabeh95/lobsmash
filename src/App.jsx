@@ -29,7 +29,7 @@ const FeatureCard = ({ icon, title, description }) => {
       <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-cyan-600 to-emerald-500 rounded-full flex items-center justify-center text-3xl group-hover:scale-110 transition-transform duration-300">
         {icon}
       </div>
-              <h3 className="text-xl font-semibold mb-4 text-gray-800 tracking-tight font-serif">{title}</h3>
+              <h3 className="text-xl font-semibold mb-4 text-gray-800 tracking-tight font-sans" style={{fontFamily: 'Inter, sans-serif'}}>{title}</h3>
       <p className="text-gray-600 leading-relaxed">{description}</p>
     </div>
   );
@@ -175,7 +175,7 @@ const LobSmashLanding = () => {
         <div className="relative z-10 max-w-6xl px-2 sm:px-6 md:px-8 gradient-border rounded-3xl bg-white/20 backdrop-blur-xl shadow-2xl py-10 sm:py-16 mx-auto border border-white/30">
           <div className="flex flex-col items-center justify-center mb-4 sm:mb-6">
           </div>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 font-serif" style={{ letterSpacing: '-2px' }}>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 font-sans" style={{ letterSpacing: '-2px', fontFamily: 'Inter, sans-serif' }}>
             <span className="lob-italic lob-shootup text-white inline-block drop-shadow-2xl" style={{textShadow: '2px 2px 4px rgba(0,0,0,0.8)'}}>Lob</span><span className="smash-in text-white inline-block drop-shadow-2xl" style={{textShadow: '2px 2px 4px rgba(0,0,0,0.8)'}}>Smash</span>
           </h1>
           <p className="text-base sm:text-lg mb-6 sm:mb-8 opacity-90 font-normal max-w-2xl sm:max-w-3xl mx-auto leading-relaxed text-gray-700">
@@ -278,7 +278,7 @@ const LobSmashLanding = () => {
                 <div className={`w-24 h-24 mb-6 flex items-center justify-center rounded-full bg-white shadow-lg ring-2 ring-cyan-200/40`}>
                   {feature.icon}
                 </div>
-                <h3 className="text-xl font-semibold mb-4 text-gray-800 tracking-tight font-serif">{feature.title}</h3>
+                <h3 className="text-xl font-semibold mb-4 text-gray-800 tracking-tight font-sans" style={{fontFamily: 'Inter, sans-serif'}}>{feature.title}</h3>
                 <p className="text-gray-600 leading-relaxed">{feature.description}</p>
               </div>
             ))}
@@ -305,7 +305,7 @@ const LobSmashLanding = () => {
           }} />
         </div>
         <div className="relative z-10 max-w-4xl mx-auto px-6 sm:px-8 rounded-3xl bg-white/20 backdrop-blur-xl shadow-2xl py-16 border border-white/30">
-          <h2 className="text-2xl sm:text-5xl md:text-6xl font-bold mb-4 sm:mb-6 tracking-tight text-white font-serif drop-shadow-2xl" style={{textShadow: '2px 2px 4px rgba(0,0,0,0.8)'}}>
+          <h2 className="text-2xl sm:text-5xl md:text-6xl font-bold mb-4 sm:mb-6 tracking-tight text-white font-sans drop-shadow-2xl" style={{textShadow: '2px 2px 4px rgba(0,0,0,0.8)', fontFamily: 'Inter, sans-serif'}}>
             Be the First to Get Your AI Padel Coach
           </h2>
           <p className="text-base sm:text-xl mb-8 sm:mb-12 opacity-90 max-w-xl sm:max-w-2xl mx-auto leading-relaxed text-gray-700 font-medium">
