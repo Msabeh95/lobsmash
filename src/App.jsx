@@ -179,7 +179,7 @@ const LobSmashLanding = () => {
             <span className="lob-italic lob-shootup text-white inline-block drop-shadow-2xl" style={{textShadow: '2px 2px 4px rgba(0,0,0,0.8)'}}>Lob</span><span className="smash-in text-white inline-block drop-shadow-2xl" style={{textShadow: '2px 2px 4px rgba(0,0,0,0.8)'}}>Smash</span>
           </h1>
           <p className="text-base sm:text-lg mb-6 sm:mb-8 opacity-90 font-normal max-w-2xl sm:max-w-3xl mx-auto leading-relaxed text-gray-700">
-            Your doubles partner won't coach you? LobSmash will — <span className="italic">No drama</span>.
+          You. Your partner. Your AI coach. One space to talk, learn, and dominate.
           </p>
           <button 
             onClick={scrollToWaitlist}
