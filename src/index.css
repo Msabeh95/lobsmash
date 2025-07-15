@@ -19,8 +19,23 @@ body {
   background-repeat: no-repeat !important;
 }
 
+@font-face {
+  font-family: 'Blanka';
+  src: url('/Blanka-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.blanka {
+  font-family: 'Blanka', 'Inter', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  letter-spacing: 0.04em;
+}
+
 .lob-italic {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Blanka', 'Playfair Display', serif;
   font-style: italic;
   font-weight: 700;
 }

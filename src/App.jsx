@@ -150,9 +150,6 @@ const LobSmashLanding = () => {
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center text-center text-white overflow-hidden px-2 sm:px-6">
         {/* Logo floating above the hero container */}
-        <div className="absolute left-1/2 -translate-x-1/2 top-40 sm:top-1/5 md:top-1/6 lg:top-12 z-20 flex flex-col items-center">
-          <img src="/logo.jpg" alt="LobSmash Logo" className="w-28 sm:w-32 md:w-36 lg:w-44 rounded-full bg-white/0 border-4 border-white/60 shadow-2xl" style={{background: 'transparent'}} />
-        </div>
         {/* Floating Elements */}
         <div className="absolute inset-0 pointer-events-none">
           <FloatingBall delay={0} position="top-1/5 left-1/12" />
@@ -175,8 +172,8 @@ const LobSmashLanding = () => {
         <div className="relative z-10 max-w-6xl px-2 sm:px-6 md:px-8 gradient-border rounded-3xl bg-white/20 backdrop-blur-xl shadow-2xl py-10 sm:py-16 mx-auto border border-white/30">
           <div className="flex flex-col items-center justify-center mb-4 sm:mb-6">
           </div>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 font-sans" style={{ letterSpacing: '-2px', fontFamily: 'Inter, sans-serif' }}>
-            <span className="lob-italic lob-shootup text-white inline-block drop-shadow-2xl" style={{textShadow: '2px 2px 4px rgba(0,0,0,0.8)'}}>Lob</span><span className="smash-in text-white inline-block drop-shadow-2xl" style={{textShadow: '2px 2px 4px rgba(0,0,0,0.8)'}}>Smash</span>
+          <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold mb-4 sm:mb-6 blanka w-full" style={{ letterSpacing: '-2px', fontSize: 'clamp(3rem, 12vw, 10rem)', lineHeight: 1.05 }}>
+            <span className="lob-shootup text-white inline-block drop-shadow-2xl" style={{textShadow: '2px 2px 4px rgba(0,0,0,0.8)'}}>Lob</span><span className="smash-in text-white inline-block drop-shadow-2xl" style={{textShadow: '2px 2px 4px rgba(0,0,0,0.8)'}}>Smash</span>
           </h1>
           <p className="text-base sm:text-lg mb-6 sm:mb-8 opacity-90 font-normal max-w-2xl sm:max-w-3xl mx-auto leading-relaxed text-gray-700">
           You. Your partner. Your AI coach. One space to talk, learn, and dominate.
