@@ -169,10 +169,10 @@ const LobSmashLanding = () => {
             backgroundSize: '100px 100px'
           }} />
         </div>
-        <div className="relative z-10 max-w-6xl px-2 sm:px-6 md:px-8 gradient-border rounded-3xl bg-white/20 backdrop-blur-xl shadow-2xl py-10 sm:py-16 mx-auto border border-white/30">
-          <div className="flex flex-col items-center justify-center mb-4 sm:mb-6">
+        <div className="relative z-10 max-w-4xl px-2 sm:px-4 md:px-6 gradient-border rounded-3xl bg-white/20 backdrop-blur-xl shadow-2xl py-4 sm:py-8 mx-auto border border-white/30">
+          <div className="flex flex-col items-center justify-center mb-2 sm:mb-3">
           </div>
-          <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold mb-4 sm:mb-6 blanka w-full" style={{ letterSpacing: '-2px', fontSize: 'clamp(3rem, 12vw, 10rem)', lineHeight: 1.05 }}>
+          <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold mt-0 mb-8 sm:mb-12 blanka w-full" style={{ letterSpacing: '-2px', fontSize: 'clamp(3rem, 12vw, 10rem)', lineHeight: 1.05 }}>
             <span className="lob-shootup text-white inline-block drop-shadow-2xl" style={{textShadow: '2px 2px 4px rgba(0,0,0,0.8)'}}>Lob</span><span className="smash-in text-white inline-block drop-shadow-2xl" style={{textShadow: '2px 2px 4px rgba(0,0,0,0.8)'}}>Smash</span>
           </h1>
           <p className="text-base sm:text-lg mb-6 sm:mb-8 opacity-90 font-normal max-w-2xl sm:max-w-3xl mx-auto leading-relaxed text-gray-700">
