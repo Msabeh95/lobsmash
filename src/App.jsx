@@ -1,5 +1,16 @@
 import React, { useState, useEffect } from 'react';
 
+// Social Icons
+const LinkedInIcon = () => (
+  <img src="/linkedin.png" alt="LinkedIn" width="32" height="32" className="inline-block align-middle" />
+);
+const XIcon = () => (
+  <img src="/X.png" alt="X" width="32" height="32" className="inline-block align-middle" />
+);
+const InstagramIcon = () => (
+  <img src="/insta.png" alt="Instagram" width="32" height="32" className="inline-block align-middle" />
+);
+
 const FloatingBall = ({ delay = 0, position }) => {
   return (
     <div 
@@ -135,6 +146,18 @@ const LobSmashLanding = () => {
 
   return (
     <div>
+      {/* Social Icons Top */}
+      <div className="w-full flex justify-center items-center space-x-4 pt-6 pb-2 z-30 relative">
+        <a href="https://www.linkedin.com/company/lobsmash" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <img src="/linkedin.png" alt="LinkedIn" width="36" height="32" className="inline-block align-middle" style={{ width: 36, height: 32 }} />
+        </a>
+        <span aria-label="X" className="cursor-default opacity-60">
+          <img src="/X.png" alt="X" width="32" height="28" className="inline-block align-middle" style={{ width: 32, height: 28 }} />
+        </span>
+        <a href="https://www.instagram.com/lobsmash_/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <img src="/insta.png" alt="Instagram" width="32" height="28" className="inline-block align-middle" style={{ width: 32, height: 28 }} />
+        </a>
+      </div>
       {/* Player Background Image - Full Viewport */}
       <div className="fixed inset-0 opacity-20 z-0">
         <img 
@@ -175,9 +198,6 @@ const LobSmashLanding = () => {
           <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold mt-0 mb-8 sm:mb-12 blanka w-full" style={{ letterSpacing: '-2px', fontSize: 'clamp(3rem, 12vw, 10rem)', lineHeight: 1.05 }}>
             <span className="lob-shootup text-white inline-block drop-shadow-2xl" style={{textShadow: '2px 2px 4px rgba(0,0,0,0.8)'}}>Lob</span><span className="smash-in text-white inline-block drop-shadow-2xl" style={{textShadow: '2px 2px 4px rgba(0,0,0,0.8)'}}>Smash</span>
           </h1>
-          <p className="text-base sm:text-lg mb-6 sm:mb-8 opacity-90 font-normal max-w-2xl sm:max-w-3xl mx-auto leading-relaxed text-gray-700">
-          You. Your partner. Your AI coach. One space to talk, learn, and dominate.
-          </p>
           <button 
             onClick={scrollToWaitlist}
             className="bg-gradient-to-r from-cyan-600 to-emerald-500 hover:from-cyan-700 hover:to-emerald-600 text-white px-6 sm:px-10 py-4 sm:py-5 rounded-full text-lg sm:text-xl font-bold uppercase tracking-wide transform hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 shadow-xl relative overflow-hidden group border-2 border-transparent gradient-border w-full sm:w-auto"
@@ -186,7 +206,7 @@ const LobSmashLanding = () => {
             <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
           </button>
           <p className="mt-3 sm:mt-4 text-xs sm:text-sm opacity-75 text-gray-700">
-            ⚡ No video upload needed • Works for all skill levels • 100% private
+              🤖 AI-powered coaching • 🎾 For every padel player • 📊 Instant video analytics
           </p>
         </div>
       </section>
@@ -221,19 +241,23 @@ const LobSmashLanding = () => {
           </div>
           {/* Stats */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 mb-10 sm:mb-20">
-            {[{
-              value: '500+',
-              label: 'Beta Testers',
-              sub: 'Early access community'
-            }, {
-              value: '24/7',
-              label: 'AI Coach Available',
-              sub: 'Get tips anytime, anywhere'
-            }, {
-              value: '0',
-              label: 'Video Uploads Needed',
-              sub: '100% private, always'
-            }].map((stat, i) => (
+            {[
+              {
+                value: '99%',
+                label: 'AI Accuracy',
+                sub: 'Smart insights for your game'
+              },
+              {
+                value: '1 min',
+                label: 'Video to Analytics',
+                sub: 'Fast, actionable feedback'
+              },
+              {
+                value: '100%',
+                label: 'Private & Secure',
+                sub: 'Your data, always safe'
+              }
+            ].map((stat, i) => (
               <div key={i} className="text-center p-8 bg-white/20 backdrop-blur-xl rounded-3xl shadow-xl border border-white/30 hover:scale-105 hover:shadow-2xl transition-all duration-300 transform">
                 <div className="text-5xl sm:text-6xl font-extrabold tracking-wide text-white drop-shadow-2xl mb-3 font-sans" style={{fontFamily: 'Inter, sans-serif', letterSpacing: '0.04em', textShadow: '2px 2px 4px rgba(0,0,0,0.8)'}}>
                   {stat.value}
@@ -378,6 +402,18 @@ const LobSmashLanding = () => {
           )}
         </div>
       </section>
+      {/* Social Icons Bottom */}
+      <div className="w-full flex justify-center items-center space-x-4 pt-8 pb-6 z-30 relative">
+        <a href="https://www.linkedin.com/company/lobsmash" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <img src="/linkedin.png" alt="LinkedIn" width="36" height="32" className="inline-block align-middle" style={{ width: 36, height: 32 }} />
+        </a>
+        <span aria-label="X" className="cursor-default opacity-60">
+          <img src="/X.png" alt="X" width="32" height="28" className="inline-block align-middle" style={{ width: 32, height: 28 }} />
+        </span>
+        <a href="https://www.instagram.com/lobsmash_/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <img src="/insta.png" alt="Instagram" width="32" height="28" className="inline-block align-middle" style={{ width: 32, height: 28 }} />
+        </a>
+      </div>
     </div>
   );
 };
