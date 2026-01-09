@@ -14,6 +14,7 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://lobsmash.com"),
   title: "LobSmash — World-Class AI Padel Coach & Performance Analytics",
   description: "Master your game with LobSmash, the elite AI-powered padel coach. Get professional technical analysis, shot tracking, and strategic mastery in your pocket.",
   keywords: ["padel ai coach", "ai padel analysis", "padel performance analytics", "padel shot tracking", "padel strategy academy", "improve padel game", "lobsmash"],
