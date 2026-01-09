@@ -14,8 +14,32 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "LobSmash – Your AI Padel Coach",
-  description: "Unleash Your Inner Champion Today. All In One Place.",
+  title: "LobSmash — World-Class AI Padel Coach & Performance Analytics",
+  description: "Master your game with LobSmash, the elite AI-powered padel coach. Get professional technical analysis, shot tracking, and strategic mastery in your pocket.",
+  keywords: ["padel ai coach", "ai padel analysis", "padel performance analytics", "padel shot tracking", "padel strategy academy", "improve padel game", "lobsmash"],
+  authors: [{ name: "LobSmash Academy" }],
+  openGraph: {
+    title: "LobSmash — World-Class AI Padel Coach",
+    description: "The future of padel training. Get elite AI technical analysis and pro analytics anytime, anywhere.",
+    url: "https://lobsmash.com",
+    siteName: "LobSmash",
+    images: [
+      {
+        url: "/padel-player-analysis.png",
+        width: 1200,
+        height: 630,
+        alt: "LobSmash AI Padel Analysis",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "LobSmash — World-Class AI Padel Coach",
+    description: "Elite AI technical analysis & pro analytics in your pocket.",
+    images: ["/padel-player-analysis.png"],
+  },
   icons: {
     icon: "/favicon-ls.png",
     apple: "/favicon-ls.png",
