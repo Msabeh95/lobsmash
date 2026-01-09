@@ -13,32 +13,32 @@ export function Pricing() {
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          className="bg-[#002FA7] rounded-[48px] p-12 text-white shadow-xl relative overflow-hidden group border border-white/10"
+          className="bg-[#002FA7] rounded-[40px] md:rounded-[48px] p-8 md:p-12 text-white shadow-xl relative overflow-hidden group border border-white/10"
         >
           <div className="relative z-10">
-            <div className="liquid-glass inline-block px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest mb-12 border border-white/20">The Pro Experience</div>
+            <div className="liquid-glass inline-block px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest mb-8 md:mb-12 border border-white/20">The Pro Experience</div>
             
-            <div className="mb-12">
+            <div className="mb-8 md:mb-12">
                <div className="flex items-center gap-3 mb-4">
-                  <h3 className="text-5xl font-bold tracking-tighter">Pro Access</h3>
-                  <Zap className="text-yellow-300 w-8 h-8 animate-pulse" fill="currentColor"/>
+                  <h3 className="text-3xl md:text-5xl font-bold tracking-tighter">Pro Access</h3>
+                  <Zap className="text-yellow-300 w-6 h-6 md:w-8 md:h-8 animate-pulse" fill="currentColor"/>
                </div>
                <div className="flex items-baseline gap-1">
-                  <span className="text-5xl font-extrabold tracking-tighter">£79</span>
-                  <span className="text-white/60 text-lg font-medium">/lifetime access</span>
+                  <span className="text-4xl md:text-5xl font-extrabold tracking-tighter">£79</span>
+                  <span className="text-white/60 text-sm md:text-lg font-medium">/lifetime access</span>
                </div>
-               <p className="text-white/60 text-sm mt-4 font-light">Join as a Founding Member. One-time payment, unlimited AI growth.</p>
+               <p className="text-white/60 text-xs md:text-sm mt-4 font-light">Join as a Founding Member. One-time payment, unlimited AI growth.</p>
             </div>
             
-            <div className="grid grid-cols-1 gap-y-4 mb-12">
-               <div className="flex items-center gap-3 text-xs font-bold uppercase tracking-widest"><Check className="w-5 h-5 text-blue-200" /> Unlimited Video Analysis</div>
-               <div className="flex items-center gap-3 text-xs font-bold uppercase tracking-widest"><Check className="w-5 h-5 text-blue-200" /> Advanced Tactical Heatmaps</div>
-               <div className="flex items-center gap-3 text-xs font-bold uppercase tracking-widest"><Check className="w-5 h-5 text-blue-200" /> Personalized Daily Training Feed</div>
-               <div className="flex items-center gap-3 text-xs font-bold uppercase tracking-widest"><Check className="w-5 h-5 text-blue-200" /> Private Coach Messaging (AI Powered)</div>
+            <div className="grid grid-cols-1 gap-y-4 mb-8 md:mb-12">
+               <div className="flex items-center gap-3 text-[10px] md:text-xs font-bold uppercase tracking-widest"><Check className="w-4 h-4 md:w-5 md:h-5 text-blue-200" /> Unlimited Video Analysis</div>
+               <div className="flex items-center gap-3 text-[10px] md:text-xs font-bold uppercase tracking-widest"><Check className="w-4 h-4 md:w-5 md:h-5 text-blue-200" /> Advanced Tactical Heatmaps</div>
+               <div className="flex items-center gap-3 text-[10px] md:text-xs font-bold uppercase tracking-widest"><Check className="w-4 h-4 md:w-5 md:h-5 text-blue-200" /> Personalized Daily Training Feed</div>
+               <div className="flex items-center gap-3 text-[10px] md:text-xs font-bold uppercase tracking-widest"><Check className="w-4 h-4 md:w-5 md:h-5 text-blue-200" /> Private Coach Messaging (AI Powered)</div>
             </div>
-
-            <Button className="w-full rounded-[24px] bg-white text-[#002FA7] hover:bg-white/90 font-bold py-8 text-xl transition-all group-hover:-translate-y-1 shadow-2xl">
-              Get Pro Early Access <ArrowUpRight className="ml-2 w-6 h-6" />
+ 
+            <Button className="w-full rounded-[20px] md:rounded-[24px] bg-white text-[#002FA7] hover:bg-white/90 font-bold py-6 md:py-8 text-lg md:text-xl transition-all group-hover:-translate-y-1 shadow-2xl">
+              Get Pro Early Access <ArrowUpRight className="ml-2 w-5 h-5 md:w-6 md:h-6" />
             </Button>
           </div>
         </motion.div>
