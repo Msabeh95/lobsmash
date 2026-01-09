@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
+import { Instagram, Linkedin } from "lucide-react";
 
 export function Hero() {
   const scrollToWaitlist = () => {
@@ -69,7 +70,6 @@ export function Hero() {
                 className="h-[52px] w-auto transition-all duration-300 group-hover/badge:brightness-[0.2] group-hover/badge:blur-[2px]"
               />
               
-              {/* Centered Coming Soon Text */}
               <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover/badge:opacity-100 transition-opacity duration-300">
                 <span className="text-white text-[11px] font-bold uppercase tracking-[0.25em] whitespace-nowrap">
                    Coming Soon
@@ -77,6 +77,35 @@ export function Hero() {
               </div>
             </div>
           </motion.div>
+        </motion.div>
+
+        {/* Social Links centered under CTA block */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
+          className="mt-8 flex items-center justify-center lg:justify-start gap-6 text-gray-400"
+        >
+          <a href="#" className="hover:text-moss-green transition-colors transition-transform hover:scale-110">
+            <Instagram size={18} />
+          </a>
+          <a href="#" className="hover:text-moss-green transition-colors transition-transform hover:scale-110" title="TikTok">
+            <svg 
+              width="16" 
+              height="16" 
+              viewBox="0 0 24 24" 
+              fill="none" 
+              stroke="currentColor" 
+              strokeWidth="2" 
+              strokeLinecap="round" 
+              strokeLinejoin="round"
+            >
+              <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
+            </svg>
+          </a>
+          <a href="#" className="hover:text-moss-green transition-colors transition-transform hover:scale-110">
+            <Linkedin size={18} />
+          </a>
         </motion.div>
       </div>
 
