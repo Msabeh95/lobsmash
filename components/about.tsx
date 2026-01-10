@@ -16,8 +16,8 @@ export function About() {
           viewport={{ once: true }}
           className="text-3xl md:text-5xl text-gray-900 font-medium leading-[1.2] tracking-tight"
         >
-          LobSmash is the world's first AI-native platform <br className="hidden md:block"/>
-          <span className="text-moss-green font-serif italic">built dedicatedly for the padel academy.</span> <br className="hidden md:block"/>
+          LobSmash is the world's first AI-native platform{" "}
+          <span className="text-moss-green font-serif italic">reserved for the padel elite.</span>{" "}
           We bridge the gap between amateur play and professional technique through computer vision.
         </motion.p>
       </div>

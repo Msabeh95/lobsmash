@@ -114,19 +114,22 @@ export function Hero() {
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1.2, delay: 0.4 }}
-        className="flex-1 relative w-full h-[400px] md:h-[550px] rounded-[60px] overflow-hidden shadow-[0_64px_128px_-32px_rgba(0,0,0,0.1)] border border-black/5"
+        className="flex-1 relative w-full h-[400px] md:h-[550px] group"
       >
-        {/* Refined Player Analysis Academy Imagery */}
-        <Image
-          src="/padel-player-analysis.png"
-          alt="Elite Padel Academy - AI Shot Analysis"
-          fill
-          className="object-cover transition-transform duration-[4000ms] hover:scale-105"
-          quality={90}
-          priority
-        />
-        {/* Minimalist Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-tr from-black/20 via-transparent to-transparent pointer-events-none" />
+        <div className="absolute -inset-4 bg-moss-green/10 blur-3xl rounded-[80px] opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
+        <div className="relative w-full h-full rounded-[60px] overflow-hidden shadow-[0_64px_128px_-32px_rgba(123,141,62,0.35)] border border-black/5">
+          {/* Refined Player Analysis Academy Imagery */}
+          <Image
+            src="/padel-player-analysis.png"
+            alt="Elite Padel Academy - AI Shot Analysis"
+            fill
+            className="object-cover transition-transform duration-[4000ms] hover:scale-105"
+            quality={90}
+            priority
+          />
+          {/* Minimalist Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-tr from-black/20 via-transparent to-transparent pointer-events-none" />
+        </div>
       </motion.div>
     </section>
   );

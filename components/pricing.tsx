@@ -13,7 +13,7 @@ export function Pricing() {
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          className="bg-[#002FA7] rounded-[40px] md:rounded-[48px] p-8 md:p-12 text-white shadow-xl relative overflow-hidden group border border-white/10"
+          className="bg-moss-green rounded-[40px] md:rounded-[48px] p-8 md:p-12 text-white shadow-xl relative overflow-hidden group border border-white/10"
         >
           <div className="relative z-10">
             <div className="liquid-glass inline-block px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest mb-8 md:mb-12 border border-white/20">The Pro Experience</div>
@@ -31,16 +31,18 @@ export function Pricing() {
             </div>
             
             <div className="grid grid-cols-1 gap-y-4 mb-8 md:mb-12">
-               <div className="flex items-center gap-3 text-[10px] md:text-xs font-bold uppercase tracking-widest"><Check className="w-4 h-4 md:w-5 md:h-5 text-blue-200" /> Unlimited Video Analysis</div>
-               <div className="flex items-center gap-3 text-[10px] md:text-xs font-bold uppercase tracking-widest"><Check className="w-4 h-4 md:w-5 md:h-5 text-blue-200" /> Advanced Tactical Heatmaps</div>
-               <div className="flex items-center gap-3 text-[10px] md:text-xs font-bold uppercase tracking-widest"><Check className="w-4 h-4 md:w-5 md:h-5 text-blue-200" /> Personalized Daily Training Feed</div>
-               <div className="flex items-center gap-3 text-[10px] md:text-xs font-bold uppercase tracking-widest"><Check className="w-4 h-4 md:w-5 md:h-5 text-blue-200" /> Private Coach Messaging (AI Powered)</div>
+               <div className="flex items-center gap-3 text-[10px] md:text-xs font-bold uppercase tracking-widest"><Check className="w-4 h-4 md:w-5 md:h-5 text-white/40" /> Unlimited Video Analysis</div>
+               <div className="flex items-center gap-3 text-[10px] md:text-xs font-bold uppercase tracking-widest"><Check className="w-4 h-4 md:w-5 md:h-5 text-white/40" /> Advanced Tactical Heatmaps</div>
+               <div className="flex items-center gap-3 text-[10px] md:text-xs font-bold uppercase tracking-widest"><Check className="w-4 h-4 md:w-5 md:h-5 text-white/40" /> Personalized Daily Training Feed</div>
+               <div className="flex items-center gap-3 text-[10px] md:text-xs font-bold uppercase tracking-widest"><Check className="w-4 h-4 md:w-5 md:h-5 text-white/40" /> Private Coach Messaging (AI Powered)</div>
             </div>
  
-            <Button className="w-full rounded-[20px] md:rounded-[24px] bg-white text-[#002FA7] hover:bg-white/90 font-bold py-6 md:py-8 text-lg md:text-xl transition-all group-hover:-translate-y-1 shadow-2xl">
+            <Button className="w-full rounded-[20px] md:rounded-[24px] bg-[#DFDCD4] text-moss-green hover:bg-white font-bold py-6 md:py-8 text-lg md:text-xl transition-all group-hover:-translate-y-1 shadow-2xl">
               Get Pro Early Access <ArrowUpRight className="ml-2 w-5 h-5 md:w-6 md:h-6" />
             </Button>
           </div>
+          {/* Subtle Ambient Glow */}
+          <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 blur-[100px] rounded-full -translate-y-1/2 translate-x-1/2" />
         </motion.div>
 
         {/* Right: Pitch */}
