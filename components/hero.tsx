@@ -86,10 +86,10 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.8 }}
           className="mt-8 flex items-center justify-center lg:justify-start gap-6 text-gray-400"
         >
-          <a href="#" className="hover:text-moss-green transition-colors transition-transform hover:scale-110">
+          <a href="https://www.instagram.com/lobsmash.ai" target="_blank" rel="noopener noreferrer" className="hover:text-moss-green transition-colors transition-transform hover:scale-110">
             <Instagram size={18} />
           </a>
-          <a href="#" className="hover:text-moss-green transition-colors transition-transform hover:scale-110" title="TikTok">
+          <a href="https://www.tiktok.com/@lobsmash.ai" target="_blank" rel="noopener noreferrer" className="hover:text-moss-green transition-colors transition-transform hover:scale-110" title="TikTok">
             <svg 
               width="16" 
               height="16" 
@@ -103,7 +103,7 @@ export function Hero() {
               <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
             </svg>
           </a>
-          <a href="#" className="hover:text-moss-green transition-colors transition-transform hover:scale-110">
+          <a href="https://www.linkedin.com/company/lobsmash" target="_blank" rel="noopener noreferrer" className="hover:text-moss-green transition-colors transition-transform hover:scale-110">
             <Linkedin size={18} />
           </a>
         </motion.div>

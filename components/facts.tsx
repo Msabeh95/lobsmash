@@ -6,7 +6,7 @@ const stats = [
   { value: "450k+", label: "Swings Analyzed" },
   { value: "12,900", label: "Matches Processed" },
   { value: "98.4%", label: "AI Prediction Accuracy" },
-  { value: "152", label: "Active Pro Coaches" },
+  { value: "152", label: "Training Modules" },
 ];
 
 export function Facts() {

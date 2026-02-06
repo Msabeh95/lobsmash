@@ -99,8 +99,8 @@ export function Waitlist() {
           
           <div className="mt-12 flex items-center justify-center gap-12 opacity-40">
              <div className="text-center">
-                <p className="text-gray-900 font-bold text-base mb-0.5">8,204+</p>
-                <p className="text-[9px] uppercase font-bold tracking-[0.1em]">Applicants</p>
+                <p className="text-gray-900 font-bold text-base mb-0.5">123</p>
+                <p className="text-[9px] uppercase font-bold tracking-[0.1em]">Sign ups</p>
              </div>
              <div className="w-[1px] h-8 bg-black/10" />
              <div className="text-center">

@@ -72,9 +72,7 @@ export function Services() {
              <h3 className="text-white font-bold text-2xl leading-tight mb-4 tracking-tight">Statistical Edge on Every Match</h3>
              <p className="text-white/60 text-sm font-light">Understand why you win (and why you lose) with raw data analytics from your match footage.</p>
           </div>
-          <div className="absolute top-10 right-10 w-14 h-14 rounded-full bg-moss-green flex items-center justify-center shadow-lg text-white hover:scale-110 transition-transform cursor-pointer">
-             <span className="text-[10px] font-bold uppercase tracking-widest">Live</span>
-          </div>
+
         </motion.div>
       </div>
     </section>

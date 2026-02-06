@@ -18,7 +18,7 @@ export function About() {
         >
           LobSmash is the world's first AI-native platform{" "}
           <span className="text-moss-green font-serif italic">reserved for the padel elite.</span>{" "}
-          We bridge the gap between amateur play and professional technique through computer vision.
+          We bridge the gap between amateur play and professional technique through AI video analysis, pro calibrated training modules, and <span className="text-moss-green font-serif italic">Apex</span> the AI coach you can talk to pre, during and post game.
         </motion.p>
       </div>
     </section>

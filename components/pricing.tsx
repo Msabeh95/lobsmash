@@ -5,6 +5,10 @@ import { ArrowUpRight, Check, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export function Pricing() {
+  const scrollToWaitlist = () => {
+    document.getElementById("waitlist")?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <section id="membership" className="py-24 px-8 max-w-7xl mx-auto">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -24,7 +28,7 @@ export function Pricing() {
                   <Zap className="text-yellow-300 w-6 h-6 md:w-8 md:h-8 animate-pulse" fill="currentColor"/>
                </div>
                <div className="flex items-baseline gap-1">
-                  <span className="text-4xl md:text-5xl font-extrabold tracking-tighter">£79</span>
+                  <span className="text-4xl md:text-5xl font-extrabold tracking-tighter">£49</span>
                   <span className="text-white/60 text-sm md:text-lg font-medium">/lifetime access</span>
                </div>
                <p className="text-white/60 text-xs md:text-sm mt-4 font-light">Join as a Founding Member. One-time payment, unlimited AI growth.</p>
@@ -37,7 +41,10 @@ export function Pricing() {
                <div className="flex items-center gap-3 text-[10px] md:text-xs font-bold uppercase tracking-widest"><Check className="w-4 h-4 md:w-5 md:h-5 text-white/40" /> Private Coach Messaging (AI Powered)</div>
             </div>
  
-            <Button className="w-full rounded-[20px] md:rounded-[24px] bg-[#DFDCD4] text-moss-green hover:bg-white font-bold py-6 md:py-8 text-lg md:text-xl transition-all group-hover:-translate-y-1 shadow-2xl">
+            <Button 
+              onClick={scrollToWaitlist}
+              className="w-full rounded-[20px] md:rounded-[24px] bg-[#DFDCD4] text-moss-green hover:bg-white font-bold py-6 md:py-8 text-lg md:text-xl transition-all group-hover:-translate-y-1 shadow-2xl"
+            >
               Get Pro Early Access <ArrowUpRight className="ml-2 w-5 h-5 md:w-6 md:h-6" />
             </Button>
           </div>
