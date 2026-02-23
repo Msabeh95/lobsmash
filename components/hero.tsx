@@ -32,7 +32,7 @@ export function Hero() {
           className="flex flex-col gap-6 mb-12"
         >
           <h1 className="text-secondary-foreground text-2xl md:text-3xl font-extrabold uppercase tracking-tight leading-none">
-            Your AI Padel Coach
+            Your AI Padel Coach Starts Here.
           </h1>
           
           <h2 className="text-moss-green text-5xl md:text-7xl font-serif italic leading-[0.9]">
@@ -40,8 +40,7 @@ export function Hero() {
           </h2>
           
           <h3 className="text-secondary-foreground/70 text-sm md:text-lg font-medium max-w-xl leading-relaxed tracking-wide mx-auto lg:mx-0">
-            Elite Technical Analysis & Pro Analytics in Your Pocket. <br className="hidden md:block"/>
-            Experience the future of the sport.
+            Elite-grade analysis. Game-changing data. Built for the committed.
           </h3>
         </motion.div>
 

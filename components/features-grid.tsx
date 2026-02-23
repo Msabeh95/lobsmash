@@ -21,10 +21,10 @@ export function FeaturesGrid() {
             </div>
             <h3 className="text-3xl font-extrabold leading-none mb-6 font-sans uppercase tracking-tighter">
               Clinical <br />
-              Swing Precision
+              Shot Analysis
             </h3>
             <p className="text-white/40 text-base leading-relaxed max-w-xs font-light">
-              Our neural engine deconstructs every millisecond of your motion. Achieve World Padel Tour standards with automated biometric feedback.
+              Shot detection. Footwork efficiency. Technical consistency. Our neural engine deconstructs every detail of your game.
             </p>
           </div>
           
@@ -95,7 +95,7 @@ export function FeaturesGrid() {
             </div>
             <div className="space-y-3">
               <div className="flex justify-between text-[9px] font-bold uppercase tracking-[0.4em]">
-                <span>Structural Bias</span>
+                <span>Tactical Score</span>
                 <span className="text-moss-green">81%</span>
               </div>
               <div className="h-[2px] w-full bg-black/[0.03] overflow-hidden">
