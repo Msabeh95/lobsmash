@@ -1,135 +1,72 @@
-"use client";
+﻿"use client";
 
-import Image from "next/image";
-import { Button } from "@/components/ui/button";
+import Link from "next/link";
 import { motion } from "framer-motion";
-import { Instagram, Linkedin } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import { appSignUpUrl } from "@/lib/app-url";
+import { PadelHeroDecoration } from "@/components/padel-hero-decoration";
 
 export function Hero() {
-  const scrollToWaitlist = () => {
-    document.getElementById("waitlist")?.scrollIntoView({ behavior: "smooth" });
-  };
-
   return (
-    <section className="pt-40 pb-24 px-8 max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
-      {/* Left Column: Dark Typography & Refined Hook */}
-      <div className="flex-1 text-center lg:text-left">
-        <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-          className="mb-6"
-        >
-          <span className="text-moss-green text-[9px] font-bold uppercase tracking-[0.6em] pb-3 border-b border-moss-green/10 inline-block">
-            The Elite AI Academy
-          </span>
-        </motion.div>
+    <section className="section-surface-dark relative flex min-h-[100dvh] flex-col overflow-hidden border-court-b">
+      <div
+        className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-b from-[#00336f] via-[#002d62] to-[#001a3d]"
+        aria-hidden
+      />
+      <PadelHeroDecoration />
 
+      <p
+        className="pointer-events-none absolute left-1/2 top-1/2 -z-10 -translate-x-1/2 -translate-y-[42%] select-none font-display text-[clamp(3rem,16vw,12rem)] font-extrabold leading-none text-white/[0.05] md:-translate-y-[38%]"
+        aria-hidden
+      >
+        LobSmash
+      </p>
+
+      <div className="relative z-10 flex flex-1 flex-col justify-center px-6 pb-16 pt-28 md:pb-24 md:pt-32">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.2 }}
-          className="flex flex-col gap-6 mb-12"
+          transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+          className="mx-auto w-full max-w-2xl text-center"
         >
-          <h1 className="text-secondary-foreground text-2xl md:text-3xl font-extrabold uppercase tracking-tight leading-none">
-            Your AI Padel Coach Starts Here.
+          <span className="inline-block text-[10px] font-semibold uppercase tracking-[0.4em] text-white/55">
+            LobSmash
+          </span>
+
+          <h1 className="font-display mx-auto mt-6 max-w-4xl text-balance text-3xl font-extrabold leading-[1.1] tracking-tight text-white sm:mt-7 sm:text-5xl md:text-6xl lg:max-w-5xl lg:text-[2.85rem] lg:leading-[1.08]">
+            <span className="block">Run your league.</span>
+            <span className="mt-2 block text-[#99e600] sm:mt-3">
+              Climb your LobSmash Rating.
+            </span>
           </h1>
-          
-          <h2 className="text-moss-green text-5xl md:text-7xl font-serif italic leading-[0.9]">
-            Master Every Shot
-          </h2>
-          
-          <h3 className="text-secondary-foreground/70 text-sm md:text-lg font-medium max-w-xl leading-relaxed tracking-wide mx-auto lg:mx-0">
-            Elite-grade analysis. Game-changing data. Built for the committed.
-          </h3>
-        </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="flex flex-col md:flex-row items-center justify-center lg:justify-start gap-8"
-        >
-          <Button 
-            onClick={scrollToWaitlist}
-            className="rounded-full bg-moss-green text-white hover:bg-moss-green/90 font-bold px-10 py-7 text-base shadow-lg transition-all hover:scale-105 active:scale-95 group uppercase tracking-widest"
-          >
-            Request Access
-          </Button>
+          <p className="mx-auto mt-7 max-w-2xl text-base leading-relaxed text-white/85 md:text-lg">
+            Create leagues, track matches, and compete with a dynamic rating
+            that ranks every player.
+          </p>
 
-          <motion.div 
-            className="relative group/badge cursor-default"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <div className="relative">
-              <img 
-                src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1626220800&h=64096d29994c9f1311029e28ac532662" 
-                alt="Download on the App Store"
-                className="h-[52px] w-auto transition-all duration-300 group-hover/badge:brightness-[0.2] group-hover/badge:blur-[2px]"
-              />
-              
-              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover/badge:opacity-100 transition-opacity duration-300">
-                <span className="text-white text-[11px] font-bold uppercase tracking-[0.25em] whitespace-nowrap">
-                   Coming Soon
-                </span>
-              </div>
-            </div>
-          </motion.div>
-        </motion.div>
-
-        {/* Social Links centered under CTA block */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          className="mt-8 flex items-center justify-center lg:justify-start gap-6 text-gray-400"
-        >
-          <a href="https://www.instagram.com/lobsmash.ai" target="_blank" rel="noopener noreferrer" className="hover:text-moss-green transition-colors transition-transform hover:scale-110">
-            <Instagram size={18} />
-          </a>
-          <a href="https://www.tiktok.com/@lobsmash.ai" target="_blank" rel="noopener noreferrer" className="hover:text-moss-green transition-colors transition-transform hover:scale-110" title="TikTok">
-            <svg 
-              width="16" 
-              height="16" 
-              viewBox="0 0 24 24" 
-              fill="none" 
-              stroke="currentColor" 
-              strokeWidth="2" 
-              strokeLinecap="round" 
-              strokeLinejoin="round"
+          <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row sm:justify-center sm:gap-4">
+            <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+              <Link
+                href={`${appSignUpUrl()}?intent=league`}
+                className="group inline-flex items-center justify-center gap-2 rounded-full bg-[#99e600] px-8 py-3.5 text-sm font-bold uppercase tracking-wide text-[#002d62] shadow-md shadow-[#99e600]/25 transition hover:bg-[#b3ff33] hover:shadow-lg sm:px-9"
+              >
+                Start a League
+                <ArrowRight
+                  className="h-4 w-4 transition group-hover:translate-x-0.5"
+                  aria-hidden
+                />
+              </Link>
+            </motion.div>
+            <Link
+              href={`${appSignUpUrl()}?intent=player`}
+              className="inline-flex items-center justify-center rounded-lg border-2 border-white/35 bg-white/5 px-8 py-3.5 text-sm font-bold uppercase tracking-wide text-white backdrop-blur-sm transition hover:border-white/55 hover:bg-white/10"
             >
-              <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
-            </svg>
-          </a>
-          <a href="https://www.linkedin.com/company/lobsmash" target="_blank" rel="noopener noreferrer" className="hover:text-moss-green transition-colors transition-transform hover:scale-110">
-            <Linkedin size={18} />
-          </a>
+              Join as a Player
+            </Link>
+          </div>
         </motion.div>
       </div>
-
-      {/* Right Column: High-Density Image (Sharp Asset) */}
-      <motion.div 
-        initial={{ opacity: 0, scale: 0.95 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 1.2, delay: 0.4 }}
-        className="flex-1 relative w-full h-[400px] md:h-[550px] group"
-      >
-        <div className="absolute -inset-4 bg-moss-green/10 blur-3xl rounded-[80px] opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
-        <div className="relative w-full h-full rounded-[60px] overflow-hidden shadow-[0_64px_128px_-32px_rgba(123,141,62,0.35)] border border-black/5">
-          {/* Refined Player Analysis Academy Imagery */}
-          <Image
-            src="/padel-player-analysis.png"
-            alt="Elite Padel Academy - AI Shot Analysis"
-            fill
-            className="object-cover transition-transform duration-[4000ms] hover:scale-105"
-            quality={90}
-            priority
-          />
-          {/* Minimalist Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-tr from-black/20 via-transparent to-transparent pointer-events-none" />
-        </div>
-      </motion.div>
     </section>
   );
 }

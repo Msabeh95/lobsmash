@@ -1,35 +1,47 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Outfit } from "next/font/google";
+import { Chakra_Petch, Outfit } from "next/font/google";
 import "./globals.css";
 
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
+const chakra = Chakra_Petch({
+  variable: "--font-chakra",
   subsets: ["latin"],
-  style: ["normal", "italic"],
+  weight: ["500", "600", "700"],
 });
 
 const outfit = Outfit({
   variable: "--font-outfit",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://lobsmash.com"),
-  title: "LobSmash — World-Class AI Padel Coach & Performance Analytics",
-  description: "Master your game with LobSmash, the elite AI-powered padel coach. Get professional technical analysis, shot tracking, and strategic mastery in your pocket.",
-  keywords: ["padel ai coach", "ai padel analysis", "padel performance analytics", "padel shot tracking", "padel strategy academy", "improve padel game", "lobsmash"],
-  authors: [{ name: "LobSmash Academy" }],
+  title: "LobSmash — Padel leagues, sessions & standings",
+  description:
+    "The home for your padel league: create or join with a simple code, run sessions on multiple courts, and let standings and a global skill rating update automatically—plus friends and a profile that show how you play.",
+  keywords: [
+    "padel league",
+    "padel app",
+    "padel standings",
+    "Americano padel",
+    "Summit padel",
+    "padel club software",
+    "padel skill rating",
+    "lobsmash",
+  ],
+  authors: [{ name: "LobSmash" }],
   openGraph: {
-    title: "LobSmash — World-Class AI Padel Coach",
-    description: "The future of padel training. Get elite AI technical analysis and pro analytics anytime, anywhere.",
+    title: "LobSmash — Padel leagues, sessions & standings",
+    description:
+      "Run your padel league in one place: join codes, format-aware leaderboards, sessions on multiple courts, and a skill rating that travels with you.",
     url: "https://lobsmash.com",
     siteName: "LobSmash",
     images: [
       {
-        url: "/padel-player-analysis.png",
+        url: "/lobsmash-logo-removebg-preview.png",
         width: 1200,
         height: 630,
-        alt: "LobSmash AI Padel Analysis",
+        alt: "LobSmash",
       },
     ],
     locale: "en_US",
@@ -37,13 +49,14 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "LobSmash — World-Class AI Padel Coach",
-    description: "Elite AI technical analysis & pro analytics in your pocket.",
-    images: ["/padel-player-analysis.png"],
+    title: "LobSmash — Padel leagues, sessions & standings",
+    description:
+      "Join codes, sessions, standings, and a global skill rating—built for padel doubles.",
+    images: ["/lobsmash-logo-removebg-preview.png"],
   },
   icons: {
-    icon: "/favicon-ls.png",
-    apple: "/favicon-ls.png",
+    icon: "/lobsmash-logo-removebg-preview.png",
+    apple: "/lobsmash-logo-removebg-preview.png",
   },
 };
 
@@ -54,12 +67,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${playfair.variable} ${outfit.variable} font-sans antialiased`}
-      >
+      <body className={`${chakra.variable} ${outfit.variable} font-sans`}>
         {children}
       </body>
     </html>
   );
 }
-
