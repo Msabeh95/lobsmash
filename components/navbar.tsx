@@ -117,7 +117,7 @@ export function Navbar() {
 
   return (
     <nav className="sticky top-0 z-50 w-full border-b border-[#002d62]/10 bg-[var(--surface-page)] shadow-[0_1px_0_rgba(0,0,0,0.04),0_8px_24px_-8px_rgba(0,0,0,0.08)]">
-      <div className="flex w-full flex-wrap items-center justify-center gap-x-10 gap-y-2 px-4 py-3 md:gap-x-16 md:gap-y-2 md:px-8 lg:gap-x-24 lg:px-12">
+      <div className="flex w-full items-center justify-between gap-3 px-4 py-3 md:gap-4 md:px-8 lg:px-12">
         <Link
           href="/"
           className="group inline-flex shrink-0 items-center bg-transparent p-0 ring-0"
@@ -134,7 +134,7 @@ export function Navbar() {
 
         <div
           ref={desktopNavRef}
-          className="hidden items-center gap-6 md:ml-28 md:flex lg:ml-40 lg:gap-8"
+          className="hidden flex-1 items-center justify-center gap-6 sm:flex lg:gap-8"
         >
           <NavDropdown
             menuKey="players"
@@ -154,7 +154,7 @@ export function Navbar() {
           />
         </div>
 
-        <div className="flex shrink-0 items-center gap-2 md:ml-2 md:gap-2 lg:ml-4 lg:gap-3">
+        <div className="flex shrink-0 items-center gap-2 md:gap-2 lg:gap-3">
           <div className="hidden items-center gap-2 sm:flex">
             <Link
               href={appSignInUrl()}
@@ -172,7 +172,7 @@ export function Navbar() {
 
           <button
             type="button"
-            className="flex h-10 w-10 items-center justify-center rounded-lg border border-[#002d62]/20 bg-transparent text-[#002d62] transition hover:bg-[#002d62]/[0.06] md:hidden"
+            className="flex h-10 w-10 items-center justify-center rounded-lg border border-[#002d62]/20 bg-transparent text-[#002d62] transition hover:bg-[#002d62]/[0.06] sm:hidden"
             aria-expanded={mobileOpen}
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
             onClick={() => setMobileOpen((v) => !v)}
