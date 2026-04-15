@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     siteName: "LobSmash",
     images: [
       {
-        url: "/lobsmash-logo-removebg-preview.png",
+        url: "/lobsmash-logo.png",
         width: 1200,
         height: 630,
         alt: "LobSmash",
@@ -52,11 +52,11 @@ export const metadata: Metadata = {
     title: "LobSmash — Padel leagues, sessions & standings",
     description:
       "Join codes, sessions, standings, and a global skill rating—built for padel doubles.",
-    images: ["/lobsmash-logo-removebg-preview.png"],
+    images: ["/lobsmash-logo.png"],
   },
   icons: {
-    icon: "/lobsmash-logo-removebg-preview.png",
-    apple: "/lobsmash-logo-removebg-preview.png",
+    icon: "/lobsmash-logo.png",
+    apple: "/lobsmash-logo.png",
   },
 };
 
