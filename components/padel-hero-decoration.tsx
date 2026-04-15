@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 export function PadelHeroDecoration() {
   return (
     <div
-      className="pointer-events-none absolute inset-0 -z-10 overflow-hidden"
+      className="pointer-events-none absolute inset-0 z-20 overflow-hidden"
       aria-hidden
     >
       <div className="padel-hero-mesh absolute inset-0 opacity-[0.65]" />

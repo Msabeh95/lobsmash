@@ -4,25 +4,23 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { appSignUpUrl } from "@/lib/app-url";
-import { PadelHeroDecoration } from "@/components/padel-hero-decoration";
 
 export function Hero() {
   return (
-    <section className="section-surface-dark relative flex min-h-[100dvh] flex-col overflow-hidden border-court-b">
-      <div
-        className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-b from-[#00336f] via-[#002d62] to-[#001a3d]"
-        aria-hidden
-      />
-      <PadelHeroDecoration />
-
-      <p
-        className="pointer-events-none absolute left-1/2 top-1/2 -z-10 -translate-x-1/2 -translate-y-[42%] select-none font-display text-[clamp(3rem,16vw,12rem)] font-extrabold leading-none text-white/[0.05] md:-translate-y-[38%]"
+    <section className="section-surface-dark relative isolate flex min-h-[100dvh] flex-col overflow-hidden border-court-b">
+      <video
+        className="pointer-events-none absolute inset-0 z-0 h-full w-full object-cover"
+        autoPlay
+        loop
+        muted
+        playsInline
+        preload="metadata"
         aria-hidden
       >
-        LobSmash
-      </p>
+        <source src="/hero-v2.mp4" type="video/mp4" />
+      </video>
 
-      <div className="relative z-10 flex flex-1 flex-col justify-center px-6 pb-16 pt-28 md:pb-24 md:pt-32">
+      <div className="relative z-30 flex flex-1 flex-col justify-center px-6 pb-16 pt-28 md:pb-24 md:pt-32">
         <motion.div
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
