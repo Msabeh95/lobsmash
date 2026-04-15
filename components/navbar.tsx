@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils";
 
 const playersLinks = [
   { href: "#highlights", label: "Product highlights" },
-  { href: "#how-it-works", label: "How it works" },
+  { href: "#about-team", label: "About the team" },
   { href: "#skill", label: "Skill rating" },
   { href: "#pricing", label: "Pricing" },
 ] as const;
@@ -17,7 +17,7 @@ const playersLinks = [
 const ownersLinks = [
   { href: "#for-teams", label: "Who it's for" },
   { href: "#formats", label: "League formats" },
-  { href: "#how-it-works", label: "How it works" },
+  { href: "#about-team", label: "About the team" },
   { href: "#pricing", label: "Pricing" },
 ] as const;
 
@@ -117,10 +117,10 @@ export function Navbar() {
 
   return (
     <nav className="sticky top-0 z-50 w-full border-b border-[#002d62]/10 bg-[var(--surface-page)] shadow-[0_1px_0_rgba(0,0,0,0.04),0_8px_24px_-8px_rgba(0,0,0,0.08)]">
-      <div className="flex w-full items-center justify-between gap-3 px-4 py-3 md:gap-4 md:px-8 lg:px-12">
+      <div className="grid w-full grid-cols-[1fr_auto] items-center gap-3 px-4 py-3 sm:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] sm:gap-4 md:px-8 lg:px-12">
         <Link
           href="/"
-          className="group inline-flex shrink-0 items-center bg-transparent p-0 ring-0"
+          className="group inline-flex shrink-0 items-center justify-self-start bg-transparent p-0 ring-0"
         >
           <Image
             src="/lobsmash-logo-removebg-preview.png"
@@ -134,7 +134,7 @@ export function Navbar() {
 
         <div
           ref={desktopNavRef}
-          className="hidden flex-1 items-center justify-center gap-6 sm:flex lg:gap-8"
+          className="hidden items-center justify-center gap-6 justify-self-center sm:flex lg:gap-8"
         >
           <NavDropdown
             menuKey="players"
@@ -154,7 +154,7 @@ export function Navbar() {
           />
         </div>
 
-        <div className="flex shrink-0 items-center gap-2 md:gap-2 lg:gap-3">
+        <div className="col-start-2 flex shrink-0 items-center justify-self-end gap-2 sm:col-start-3 md:gap-2 lg:gap-3">
           <div className="hidden items-center gap-2 sm:flex">
             <Link
               href={appSignInUrl()}
@@ -183,7 +183,7 @@ export function Navbar() {
       </div>
 
       {mobileOpen ? (
-        <div className="border-t border-[#002d62]/10 bg-[var(--surface-page)] px-3 py-3 shadow-[0_8px_24px_-8px_rgba(0,0,0,0.08)] md:hidden">
+        <div className="border-t border-[#002d62]/10 bg-[var(--surface-page)] px-3 py-3 shadow-[0_8px_24px_-8px_rgba(0,0,0,0.08)] sm:hidden">
           <div className="flex flex-col gap-5">
             <div>
               <p className="px-4 pb-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#002d62]/50">

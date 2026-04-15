@@ -27,11 +27,7 @@ export function Hero() {
           transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
           className="mx-auto w-full max-w-2xl text-center"
         >
-          <span className="inline-block text-[10px] font-semibold uppercase tracking-[0.4em] text-white/55">
-            LobSmash
-          </span>
-
-          <h1 className="font-display mx-auto mt-6 max-w-4xl text-balance text-3xl font-extrabold leading-[1.1] tracking-tight text-white sm:mt-7 sm:text-5xl md:text-6xl lg:max-w-5xl lg:text-[2.85rem] lg:leading-[1.08]">
+          <h1 className="font-display mx-auto max-w-4xl text-balance text-3xl font-extrabold leading-[1.1] tracking-tight text-white sm:text-5xl md:text-6xl lg:max-w-5xl lg:text-[2.85rem] lg:leading-[1.08]">
             <span className="block">Run your league.</span>
             <span className="mt-2 block text-[#99e600] sm:mt-3">
               Climb your LobSmash Rating.

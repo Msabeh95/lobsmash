@@ -1,69 +1,90 @@
 import { Reveal, RevealItem, RevealStagger } from "@/components/motion-reveal";
 
-const steps = [
+/** Mock data — replace with real team info and photos when ready. */
+const teamPlaceholders = [
   {
-    step: "01",
-    title: "Sign up & profile",
-    body: "Create a secure account, then set your display name, @username, and player profile—play style, side, experience, strengths, and areas to grow.",
+    id: "placeholder-1",
+    name: "Alex Rivera",
+    title: "Co-founder · Product & leagues",
+    email: "alex@example.com",
+    location: "Toronto, ON",
+    bio: "Former league organiser who wanted fewer spreadsheets on match night. Owns roadmap, partnerships, and the player experience.",
+    initials: "AR",
   },
   {
-    step: "02",
-    title: "Create or join a league",
-    body: "Start a new league with a format, or request to join with a code or invite link. Organisers approve join requests before you’re in.",
-  },
-  {
-    step: "03",
-    title: "Run sessions & enter results",
-    body: "Open your league, start a session, and walk through the wizard—teams, courts, and results for your format. Complete the session when the night’s done.",
-  },
-  {
-    step: "04",
-    title: "Standings & skill",
-    body: "Standings update automatically. Your global skill rating can refine after rated sessions—the more you play, the steadier the signal.",
+    id: "placeholder-2",
+    name: "Jordan Chen",
+    title: "Co-founder · Engineering",
+    email: "jordan@example.com",
+    location: "Vancouver, BC",
+    bio: "Full-stack builder focused on reliable sessions, standings, and skill. Previously shipped tools for sports and community products.",
+    initials: "JC",
   },
 ] as const;
 
 export function HowItWorksSection() {
   return (
     <section
-      id="how-it-works"
+      id="about-team"
       className="section-surface-light section-fill border-court-y px-6"
     >
       <div className="mx-auto w-full max-w-7xl">
         <Reveal>
           <p className="text-center text-[10px] font-semibold uppercase tracking-[0.35em] text-[#002d62]/50">
-            LobSmash — how it works
+            LobSmash — about the team
           </p>
           <h2 className="font-display mt-3 text-center text-3xl font-bold text-[#002d62] md:text-4xl">
-            From first login to league night
+            Built by people who run leagues
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-center text-[#002d62]/75">
-            A straight path: profile → league → sessions → standings and skill.
+            We are product builders, engineers, and padel enthusiasts focused on
+            one mission: help every league run smoother and feel more connected.
           </p>
         </Reveal>
 
-        <RevealStagger className="mt-16 grid gap-6 md:grid-cols-2">
-          {steps.map(({ step, title, body }) => (
-            <RevealItem key={step}>
-              <div className="h-full rounded-2xl border border-[#002d62]/10 bg-[var(--surface-page)] p-8 shadow-sm">
-                <span className="font-display text-sm font-bold text-[#3d7a00]">
-                  {step}
-                </span>
-                <h3 className="font-display mt-3 text-xl font-bold text-[#002d62]">
-                  {title}
-                </h3>
-                <p className="mt-3 text-sm leading-relaxed text-[#002d62]/80">
-                  {body}
-                </p>
-              </div>
-            </RevealItem>
-          ))}
+        <RevealStagger className="mt-16 grid max-w-4xl gap-8 md:mx-auto md:grid-cols-2">
+          {teamPlaceholders.map(
+            ({ id, name, title, email, location, bio, initials }) => (
+              <RevealItem key={id}>
+                <div className="flex h-full flex-col rounded-2xl border border-dashed border-[#002d62]/25 bg-[var(--surface-page)] p-8 shadow-sm">
+                  <div className="flex flex-col items-center text-center sm:flex-row sm:items-start sm:text-left">
+                    <div
+                      className="flex h-24 w-24 shrink-0 items-center justify-center rounded-full border-2 border-dashed border-[#002d62]/20 bg-[#002d62]/[0.06] font-display text-lg font-bold text-[#002d62]/60"
+                      aria-hidden
+                    >
+                      {initials}
+                    </div>
+                    <div className="mt-6 sm:ml-6 sm:mt-0">
+                      <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#002d62]/45">
+                        Photo placeholder
+                      </p>
+                      <h3 className="font-display mt-1 text-xl font-bold text-[#002d62]">
+                        {name}
+                      </h3>
+                      <p className="mt-1 text-sm font-medium text-[#3d7a00]">
+                        {title}
+                      </p>
+                      <p className="mt-2 text-xs text-[#002d62]/55">
+                        {location} ·{" "}
+                        <span className="underline decoration-[#002d62]/20 underline-offset-2">
+                          {email}
+                        </span>
+                      </p>
+                    </div>
+                  </div>
+                  <p className="mt-6 text-sm leading-relaxed text-[#002d62]/80">
+                    {bio}
+                  </p>
+                </div>
+              </RevealItem>
+            ),
+          )}
         </RevealStagger>
 
         <Reveal>
           <p className="mx-auto mt-12 max-w-2xl text-center text-sm font-medium text-[#3d7a00]">
-            Then add friends, compare on the friends leaderboard, and keep your
-            profile as your padel home base.
+            We are here for the long game, building the most trusted home for
+            local padel competition.
           </p>
         </Reveal>
       </div>

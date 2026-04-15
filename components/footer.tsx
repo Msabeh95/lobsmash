@@ -29,8 +29,8 @@ export function Footer() {
           <a href="#for-teams" className="transition hover:text-white">
             Who it&apos;s for
           </a>
-          <a href="#how-it-works" className="transition hover:text-white">
-            How it works
+          <a href="#about-team" className="transition hover:text-white">
+            About the team
           </a>
           <a href="#skill" className="transition hover:text-white">
             Skill
